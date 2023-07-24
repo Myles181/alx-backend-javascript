@@ -1,0 +1,16 @@
+{
+  "name": "0x00-es6_basic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "0-constants.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
