@@ -5,8 +5,8 @@
 // Add the possibility to add any attribute to the Object like contract(boolean) without specifying the name of the attribute
 
 interface Teacher {
-    firstName: string;
-    lastName: string;
+    readonly firstName: string;
+    readonly lastName: string;
     fullTimeEmployee: boolean;
     yearsOfExperience?: number;
     location: string;
@@ -14,3 +14,19 @@ interface Teacher {
 
 }
 
+interface Directors extends Teacher {
+    numberOfReports: number;
+}
+
+function printTeacher(fName: string, lName: string): string {
+    const teacher1: Teacher = {
+        firstName: fName,
+        lastName: lName,
+        fullTimeEmployee: true,
+        location: 'Nigeria',
+    }
+    return (teacher1.firstName.slice(0, 1) + '.' + teacher1.lastName);
+}
+
+
+console.log(printTeacher('Emmanuel', 'Cyril'));
