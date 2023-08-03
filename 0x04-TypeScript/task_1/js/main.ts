@@ -1,9 +1,8 @@
-// firstName(string) and lastName(string). These two attributes should only be modifiable when a Teacher is first initialized
-// fullTimeEmployee(boolean) this attribute should always be defined
-// yearsOfExperience(number) this attribute is optional
-// location(string) this attribute should always be defined
-// Add the possibility to add any attribute to the Object like contract(boolean) without specifying the name of the attribute
-
+/* Interfacees
+        Teacher
+        Student
+        Directors
+    */
 interface Teacher {
     readonly firstName: string;
     readonly lastName: string;
@@ -14,9 +13,18 @@ interface Teacher {
 
 }
 
+interface Student {
+    readonly firstName: string;
+    readonly lastName: string;
+    workonHomework(value?:void): string;
+    displayName(value?:void): string;
+}
+
 interface Directors extends Teacher {
     numberOfReports: number;
 }
+
+/* Functions */
 
 function printTeacher(fName: string, lName: string): string {
     const teacher1: Teacher = {
@@ -28,5 +36,20 @@ function printTeacher(fName: string, lName: string): string {
     return (teacher1.firstName.slice(0, 1) + '.' + teacher1.lastName);
 }
 
+class StudentClass implements Student {
+    firstName: string;
+    lastName: string;
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    
+    workonHomework() {
+        return "currently working";
+    }
 
-console.log(printTeacher('Emmanuel', 'Cyril'));
+    displayName() {
+        return this.firstName;
+    }
+}
+
